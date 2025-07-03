@@ -178,14 +178,11 @@
 
             // Build table header: 5 empty cells, then 7 weekday columns
             let html = '<table class="calendar-table"><thead><tr>';
-            //for (let i = 0; i < 5; i++) html += `<th></th>`;
-            //for (let wd = 0; wd < 7; wd++) html += `<th>${weekdays[wd]}</th>`;
             html += '</tr>';
 
             // Add 3 rows of month names (7 columns)
             for (let row = 0; row < 3; row++) {
                 html += '<tr>';
-                //for (let i = 0; i < 5; i++) html += `<th></th>`;
                 html += `<th colspan="5"></th>`; // 5 empty cells for date blocks
                 for (let wd = 0; wd < 7; wd++) {
                     const m = monthHeaderRows[row][wd];
