@@ -42,6 +42,11 @@ const monthDays = {
 };
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+// Set current year on page load
+const currentYear = new Date().getFullYear();
+document.getElementById("year-label").textContent = currentYear;
+document.getElementById("year").value = currentYear;
+
 function isLeapYear(year) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
