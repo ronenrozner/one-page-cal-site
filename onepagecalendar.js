@@ -159,5 +159,27 @@ function updateCalendar() {
 
 document.getElementById("year").addEventListener("input", updateCalendar);
 
+// Dark mode functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+  // Check for saved dark mode preference
+  const darkMode = localStorage.getItem("darkMode") === "enabled";
+  if (darkMode) {
+    document.body.classList.add("dark-mode");
+    darkModeToggle.querySelector(".toggle-text").textContent = "☀️";
+  }
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+    darkModeToggle.querySelector(".toggle-text").textContent = isDarkMode
+      ? "☀️"
+      : "🌙";
+  });
+});
+
 // Initial render
 updateCalendar();

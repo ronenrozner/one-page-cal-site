@@ -112,3 +112,98 @@ h1 {
 #instructions strong {
   font-weight: bold;
 }
+
+/* Dark mode button styles */
+.dark-mode-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 4px 8px;
+  margin-left: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: #181a1b;
+  color: #e2e2e2;
+}
+
+body.dark-mode .dark-mode-btn {
+  color: #e2e2e2;
+}
+
+body.dark-mode .dark-mode-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1,
+body.dark-mode .year-label,
+body.dark-mode #instructions h2,
+body.dark-mode #instructions h3 {
+  color: #90c4ff;
+}
+
+body.dark-mode .calendar-table {
+  background: #23272a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .calendar-table th,
+body.dark-mode .calendar-table td {
+  border-color: #444;
+  color: #e2e2e2;
+}
+
+body.dark-mode .calendar-table th,
+body.dark-mode .month-header {
+  background: #23272a;
+  color: #90c4ff;
+}
+
+body.dark-mode .date-block {
+  background: #23272a;
+  color: #e2e2e2;
+  border-right: 2.5px solid #444;
+}
+
+body.dark-mode .weekday-cell {
+  background: #23272a;
+  color: #e2e2e2;
+}
+
+body.dark-mode .sunday {
+  color: #ff7b7b;
+}
+
+body.dark-mode .leap {
+  color: #7fffd4;
+}
+
+body.dark-mode #instructions .instructions-content {
+  background: #23272a;
+  color: #e2e2e2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode input[type="number"] {
+  background: #23272a;
+  color: #e2e2e2;
+  border-color: #444;
+}
+
+/* Add transition for smooth theme switching */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+* {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+    box-shadow 0.3s;
+}
