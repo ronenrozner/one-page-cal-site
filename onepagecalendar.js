@@ -157,7 +157,13 @@ function updateCalendar() {
     generateCalendar(year);
 }
 
+// Change year
 document.getElementById("year").addEventListener("input", updateCalendar);
+
+// Print button
+document.getElementById("print-button").addEventListener("click", function () {
+  window.print();
+});
 
 // Dark mode functionality
 document.addEventListener("DOMContentLoaded", function () {

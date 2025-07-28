@@ -207,3 +207,30 @@ body {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s,
     box-shadow 0.3s;
 }
+/* Print styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #calendar-container,
+  #calendar-container * {
+    visibility: visible;
+  }
+  #calendar-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+  }
+  .dark-mode #calendar-container {
+    filter: none;
+    background: white;
+    color: black;
+  }
+}
+
+.print-btn {
+  margin-left: 16px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
