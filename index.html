@@ -7,104 +7,147 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="keywords"
         content="calendar, one-page calendar, yearly calendar, printable calendar, date finder, week day, leap year, month grid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="onepagecalendar.css">
 </head>
 
 <body>
-    <h1>One-Page Calendar <span class="year-label" id="year-label"></span></h1>
-    <div class="controls">
-        <label for="year">Select Year: </label>
-        <input type="number" id="year" value="" min="1900" max="2100" style="width: 80px;">
-        <span id="leap-indicator" class="leap"></span>
-        <button id="dark-mode-toggle" class="dark-mode-btn">
-            <span class="toggle-text">🌙</span>
-        </button>
-        <button id="print-button" class="print-btn">🖨️ Print Calendar</button>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                One-Page Calendar 
+                <span class="year-badge" id="year-label"></span>
+            </h1>
+            
+            <div class="controls-toolbar">
+                <div class="year-selector">
+                    <label for="year" class="year-label">Year</label>
+                    <input type="number" id="year" value="" min="1900" max="2100" class="year-input">
+                    <span id="leap-indicator" class="leap-badge"></span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="dark-mode-toggle" class="icon-button" title="Toggle dark mode">
+                        <span class="toggle-icon">🌙</span>
+                    </button>
+                    <button id="print-button" class="print-button" title="Print calendar">
+                        <span class="print-icon">🖨️</span>
+                        <span class="print-text">Print</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div id="calendar-container" class="calendar-wrapper"></div>
+            
+            <section id="instructions" class="instructions-section">
+                <div class="instructions-toggle">
+                    <button id="instructions-toggle-btn" class="instructions-toggle-btn">
+                        <span class="toggle-text">How to Use This Calendar</span>
+                        <span class="toggle-arrow">▼</span>
+                    </button>
+                </div>
+                
+                <div class="instructions-content" id="instructions-content">
+                    <div class="instructions-inner">
+                        <div class="intro-section">
+                            <h2>How to Use The One-Page Calendar</h2>
+                            <p class="intro-text">
+                                This unique calendar design, based on an article written by 
+                                <a href="https://bigthink.com/people/ethansiegel/" target="_blank" rel="noopener">
+                                    <strong>Ethan Siegel</strong>
+                                </a>
+                                titled "<a href="https://bigthink.com/starts-with-a-bang/one-page-calendar/" target="_blank" rel="noopener">
+                                    <strong>The one-page calendar that changes how you view the year</strong>
+                                </a>" on <strong>BigThink</strong>, shows an entire year on one page, making it easy to find dates and days of the week without flipping through months.
+                            </p>
+                        </div>
+
+                        <div class="instruction-grid">
+                            <div class="instruction-card">
+                                <h3>📍 Understanding the Layout</h3>
+                                <ul>
+                                    <li><strong>Top center</strong>: The year (Leap years highlighted)</li>
+                                    <li><strong>Top section</strong>: Months arranged by starting day</li>
+                                    <li><strong>Left side</strong>: Days of the month (1-31)</li>
+                                    <li><strong>Right side</strong>: Days of the week grid</li>
+                                </ul>
+                            </div>
+
+                            <div class="instruction-card">
+                                <h3>🔍 Finding Day of the Week</h3>
+                                <p><strong>When you know the month and date:</strong></p>
+                                <ol>
+                                    <li>Find your <strong>month</strong> in the top section</li>
+                                    <li>Find your <strong>date</strong> on the left side</li>
+                                    <li>Trace down from month and right from date</li>
+                                    <li>Where they intersect shows the day of the week</li>
+                                </ol>
+                                <div class="example">
+                                    <strong>Example:</strong> For July 4th, find "July" at top, "4" on left, trace to intersection.
+                                </div>
+                            </div>
+
+                            <div class="instruction-card">
+                                <h3>📅 Finding Specific Dates</h3>
+                                <p><strong>When you know the month and day of week:</strong></p>
+                                <ol>
+                                    <li>Start at your <strong>month</strong> in the top section</li>
+                                    <li>Move down to your desired <strong>day of the week</strong></li>
+                                    <li>Move left to see which dates fall on that day</li>
+                                </ol>
+                                <div class="example">
+                                    <strong>Example:</strong> For Thanksgiving (4th Thursday of November), find "November", move to "Thursday", find the fourth occurrence.
+                                </div>
+                            </div>
+
+                            <div class="instruction-card">
+                                <h3>🗓️ Finding Matching Months</h3>
+                                <p><strong>When you know the date and day of week:</strong></p>
+                                <ol>
+                                    <li>Start at your <strong>date</strong> on the left</li>
+                                    <li>Move right to your <strong>day of the week</strong></li>
+                                    <li>Move up to see which months match</li>
+                                </ol>
+                                <div class="example">
+                                    <strong>Example:</strong> For "Friday the 13th", start at "13", move to "Friday", trace up to find matching months.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tips-section">
+                            <h3>💡 Pro Tips</h3>
+                            <div class="tips-grid">
+                                <div class="tip-item">
+                                    <strong>Month Days:</strong>
+                                    <ul>
+                                        <li><span class="days-31">31 days:</span> Jan, Mar, May, Jul, Aug, Oct, Dec</li>
+                                        <li><span class="days-30">30 days:</span> Apr, Jun, Sep, Nov</li>
+                                        <li><span class="days-feb">28/29 days:</span> February (29 in leap years)</li>
+                                    </ul>
+                                </div>
+                                <div class="tip-item">
+                                    <strong>Usage Tips:</strong>
+                                    <ul>
+                                        <li>Use two fingers when tracing paths</li>
+                                        <li>Take time to practice the method</li>
+                                        <li>Remember months are grouped by starting day</li>
+                                        <li>Much faster than traditional calendars!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    <div id="calendar-container"></div>
 
     <script src="onepagecalendar.js"></script>
-
-    <section id="instructions">
-        <div class="instructions-content">
-            <h2 style="color: #1870d5; margin-top: 0;">How to Use The One-Page Calendar</h2>
-            <p>
-                This unique calendar design, based on an article writen
-                by <a href="https://bigthink.com/people/ethansiegel/" target="_blank" rel="noopener"><strong>Ethan
-                        Siegel</strong></a>
-                named: "<a href="https://bigthink.com/starts-with-a-bang/one-page-calendar/" target="_blank"
-                    rel="noopener"><strong>The one-page calendar that changes how you view the year</strong></a>" on
-                <strong>BigThink</strong>, shows an
-                entire year on one page, making it
-                easy to find dates and days of the week without flipping through months. Here's how to use it
-                effectively:
-            </p>
-
-            <h3>Understanding the Layout</h3>
-            <ul>
-                <li><strong>Top page</strong>: The year (Leap years will be highlighted)</li>
-                <li><strong>Top right</strong>: Months of the year (arranged by starting day of the week)</li>
-                <li><strong>Top left</strong>: Days of the week (Sunday through Saturday)</li>
-                <li><strong>Bottom left</strong>: Days of the month (1-31 in a standard calendar grid)</li>
-            </ul>
-
-            <h3>Finding What Day of the Week a Date Falls On</h3>
-            <p><strong>When you know the month and date:</strong></p>
-            <ol>
-                <li>Place one finger on the desired <strong>month</strong> (top right)</li>
-                <li>Place another finger on the desired <strong>date</strong> (bottom left)</li>
-                <li>Slide the "month" finger <strong>down</strong> and the "date" finger <strong>right</strong>
-                    until
-                    they meet</li>
-                <li>The day of the week where they intersect is your answer</li>
-            </ol>
-            <p><em>Example:</em> To find what day July 4th falls on, start with "July" at the top and "4" on the
-                left,
-                then slide until they meet at the day of the week.</p>
-
-            <h3>Finding What Date a Specific Day Falls On</h3>
-            <p><strong>When you know the month and day of the week:</strong></p>
-            <ol>
-                <li>Start at the desired <strong>month</strong> (top right)</li>
-                <li>Move your finger <strong>down</strong> to the desired <strong>day of the week</strong></li>
-                <li>Move <strong>left</strong> to see which dates in the month fall on that day</li>
-            </ol>
-            <p><em>Example:</em> To find the fourth Thursday of November (Thanksgiving), start at "November,"
-                move down
-                to "Thursday," then move left to find the fourth occurrence.</p>
-
-            <h3>Finding Which Months Have a Specific Date/Day Combination</h3>
-            <p><strong>When you know the date and day of the week:</strong></p>
-            <ol>
-                <li>Start at the desired <strong>date</strong> (bottom left)</li>
-                <li>Move your finger <strong>right</strong> to the desired <strong>day of the week</strong></li>
-                <li>Move <strong>up</strong> to see which months contain this combination</li>
-            </ol>
-            <p><em>Example:</em> To find which months have a "Friday the 13th," start at "13," move right to
-                "Friday,"
-                then move up to see the matching months.</p>
-
-            <h3>Key Month Information to Remember</h3>
-            <ul>
-                <li><strong>31 days</strong>: January, March, May, July, August, October, December</li>
-                <li><strong>30 days</strong>: April, June, September, November</li>
-                <li><strong>28/29 days</strong>: February (28 in regular years, 29 in leap years)</li>
-            </ul>
-
-            <h3>Tips for Success</h3>
-            <ul>
-                <li>Use two fingers or hands when tracing from different starting points</li>
-                <li>The calendar works for the entire year – no need to flip pages</li>
-                <li>Remember that months are grouped by their starting day of the week</li>
-                <li>Take your time tracing the paths until the method becomes natural</li>
-            </ul>
-            <p>
-                With a little practice, you'll find this one-page format much faster than traditional
-                month-by-month
-                calendars!
-            </p>
-        </div>
-    </section>
 </body>
 
 </html>
