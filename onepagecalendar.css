@@ -17,7 +17,7 @@
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
-  
+
   /* Neutral Colors */
   --color-white: #ffffff;
   --color-gray-50: #f8fafc;
@@ -30,7 +30,7 @@
   --color-gray-700: #334155;
   --color-gray-800: #1e293b;
   --color-gray-900: #0f172a;
-  
+
   /* Dark Mode Colors */
   --color-dark-bg: #0f172a;
   --color-dark-surface: #1e293b;
@@ -38,9 +38,10 @@
   --color-dark-border: #475569;
   --color-dark-text: #f1f5f9;
   --color-dark-text-muted: #cbd5e1;
-  
+
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -49,17 +50,17 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
-  
+
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-  
+
   /* Spacing System (8px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -72,20 +73,22 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-20: 5rem;
-  
+
   /* Border Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 250ms ease-in-out;
@@ -98,7 +101,11 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-gray-900);
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
   min-height: 100vh;
   transition: all var(--transition-normal);
   -webkit-font-smoothing: antialiased;
@@ -131,7 +138,11 @@ body {
 }
 
 .year-badge {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   color: var(--color-white);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-lg);
@@ -247,7 +258,11 @@ body {
   padding: var(--space-3) var(--space-5);
   border: none;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   color: var(--color-white);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -305,7 +320,11 @@ body {
 }
 
 .calendar-table th {
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
@@ -315,7 +334,11 @@ body {
 }
 
 .month-header {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   color: var(--color-white);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
@@ -325,7 +348,7 @@ body {
 }
 
 .month-header:not(:empty)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 50%;
@@ -337,7 +360,11 @@ body {
 }
 
 .date-block {
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
   font-weight: var(--font-weight-semibold);
   color: var(--color-gray-800);
   border-right: 2px solid var(--color-primary);
@@ -346,7 +373,11 @@ body {
 }
 
 .date-block:not(:empty):hover {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-primary) 100%
+  );
   color: var(--color-white);
   transform: scale(1.05);
   z-index: 10;
@@ -395,7 +426,11 @@ body {
   padding: var(--space-4) var(--space-8);
   border: none;
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-white) 0%,
+    var(--color-gray-50) 100%
+  );
   color: var(--color-gray-700);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
@@ -408,7 +443,11 @@ body {
 .instructions-toggle-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
 }
 
 .toggle-arrow {
@@ -480,7 +519,11 @@ body {
 }
 
 .instruction-card {
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 100%
+  );
   padding: var(--space-6);
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-gray-200);
@@ -530,7 +573,11 @@ body {
 }
 
 .tips-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   color: var(--color-white);
   padding: var(--space-8);
   border-radius: var(--radius-xl);
@@ -566,13 +613,23 @@ body {
   line-height: var(--line-height-relaxed);
 }
 
-.days-31 { color: #fbbf24; }
-.days-30 { color: #60a5fa; }
-.days-feb { color: #f87171; }
+.days-31 {
+  color: #fbbf24;
+}
+.days-30 {
+  color: #60a5fa;
+}
+.days-feb {
+  color: #f87171;
+}
 
 /* Dark Mode Styles */
 body.dark-mode {
-  background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-surface) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-bg) 0%,
+    var(--color-dark-surface) 100%
+  );
   color: var(--color-dark-text);
 }
 
@@ -581,7 +638,11 @@ body.dark-mode .title {
 }
 
 body.dark-mode .year-badge {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-accent) 100%
+  );
 }
 
 body.dark-mode .controls-toolbar {
@@ -626,23 +687,39 @@ body.dark-mode .calendar-table td {
 }
 
 body.dark-mode .calendar-table th {
-  background: linear-gradient(135deg, var(--color-dark-surface-light) 0%, var(--color-dark-surface) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface-light) 0%,
+    var(--color-dark-surface) 100%
+  );
   color: var(--color-primary-light);
   border-bottom-color: var(--color-primary-light);
 }
 
 body.dark-mode .month-header {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-accent) 100%
+  );
 }
 
 body.dark-mode .date-block {
-  background: linear-gradient(135deg, var(--color-dark-surface-light) 0%, var(--color-dark-surface) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface-light) 0%,
+    var(--color-dark-surface) 100%
+  );
   color: var(--color-dark-text);
   border-right-color: var(--color-primary-light);
 }
 
 body.dark-mode .date-block:not(:empty):hover {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-accent) 100%
+  );
   color: var(--color-white);
 }
 
@@ -666,13 +743,21 @@ body.dark-mode .sunday:hover {
 }
 
 body.dark-mode .instructions-toggle-btn {
-  background: linear-gradient(135deg, var(--color-dark-surface) 0%, var(--color-dark-surface-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface) 0%,
+    var(--color-dark-surface-light) 100%
+  );
   color: var(--color-dark-text);
   border-color: var(--color-dark-border);
 }
 
 body.dark-mode .instructions-toggle-btn:hover {
-  background: linear-gradient(135deg, var(--color-dark-surface-light) 0%, var(--color-dark-surface) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface-light) 0%,
+    var(--color-dark-surface) 100%
+  );
 }
 
 body.dark-mode .instructions-inner {
@@ -697,7 +782,11 @@ body.dark-mode .intro-text a:hover {
 }
 
 body.dark-mode .instruction-card {
-  background: linear-gradient(135deg, var(--color-dark-surface-light) 0%, var(--color-dark-surface) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-surface-light) 0%,
+    var(--color-dark-surface) 100%
+  );
   border-color: var(--color-dark-border);
 }
 
@@ -715,11 +804,19 @@ body.dark-mode .instruction-card ol {
 }
 
 body.dark-mode .example {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-primary-light) 100%
+  );
 }
 
 body.dark-mode .tips-section {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-accent) 100%
+  );
 }
 
 /* Responsive Design */
@@ -727,41 +824,41 @@ body.dark-mode .tips-section {
   .container {
     padding: var(--space-3);
   }
-  
+
   .title {
     font-size: var(--font-size-3xl);
     flex-direction: column;
     gap: var(--space-3);
   }
-  
+
   .controls-toolbar {
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-4);
   }
-  
+
   .action-buttons {
     width: 100%;
     justify-content: center;
   }
-  
+
   .calendar-table {
     font-size: var(--font-size-sm);
   }
-  
+
   .calendar-table th,
   .calendar-table td {
     padding: var(--space-2) var(--space-3);
   }
-  
+
   .instruction-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .instructions-inner {
     padding: var(--space-6);
   }
-  
+
   .tips-grid {
     grid-template-columns: 1fr;
   }
@@ -771,13 +868,13 @@ body.dark-mode .tips-section {
   .title {
     font-size: var(--font-size-2xl);
   }
-  
+
   .calendar-table th,
   .calendar-table td {
     padding: var(--space-1) var(--space-2);
     font-size: var(--font-size-xs);
   }
-  
+
   .instructions-inner {
     padding: var(--space-4);
   }
@@ -788,57 +885,41 @@ body.dark-mode .tips-section {
   body * {
     visibility: hidden;
   }
-  
+
   #calendar-container,
   #calendar-container * {
     visibility: visible;
   }
-  
+
   #calendar-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 30px;
   }
-  
+
   .calendar-table {
     box-shadow: none;
     border: 2px solid #000;
   }
-  
+
   .calendar-table th,
   .calendar-table td {
     border-color: #000;
     background: white !important;
     color: black !important;
   }
-  
+
   .month-header {
     background: #f0f0f0 !important;
     color: black !important;
   }
-  
+
   .date-block {
     background: #f8f8f8 !important;
     color: black !important;
     border-right-color: #000 !important;
   }
-}
-
-/* Animation Classes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp var(--transition-normal) ease-out;
 }
 
 /* Focus Styles for Accessibility */
